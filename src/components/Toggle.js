@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 
-
 function Toggle() {
-  const [isOn, setIsOn] = useState(false)
+  const [isOn, setIsOn] = useState(false);
 
-  function handleClick() {
+  const handleToggle = () => {
     setIsOn((isOn) => !isOn);
   }
-
+  
   const color = isOn ? "red" : "white";
 
-  console.log({isOn, setIsOn})
-  return (
-    <button style={{background: color}} onClick={handleClick}>
-    {isOn ? "ON" : "OFF"}
-    </button>
-  );
+  return <button style={{ background: color }} onClick={handleToggle}>{isOn ? "ON" : "OFF"}</button>;
 }
 
 export default Toggle;
